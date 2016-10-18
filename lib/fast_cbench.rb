@@ -1,4 +1,7 @@
 # A simple openflow controller for benchmarking (fast version).
+
+require 'profile'
+
 class FastCbench < Trema::Controller
   def start(_args)
     logger.info "#{name} started."

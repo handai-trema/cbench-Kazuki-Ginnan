@@ -5,19 +5,19 @@
 
 profileを用いてボトルネックをしらべたところ  
 
-
+```
 ./bin/trema run ./lib/cbench.rb
-
+```
 
 によりcbench.rbを起動させたあと、
 
-
+```
 ./bin/cbench --port 6653 --switches 1 --loops 5 --ms-per-test 10000 --delay 1000 --throughput
-
+```
 
 
 を実行した場合でボトルネックを調べた  
-
+```
  %   cumulative   self              self     total
  time   seconds   seconds    calls  ms/call  ms/call  name
  84.68    48.64     48.64        1 48640.00 48640.00  Thread#join
@@ -37,7 +37,7 @@ profileを用いてボトルネックをしらべたところ
   1.51   207.50      0.87    35137     0.02     0.07  BinData::Struct#include_obj?
   1.50   208.36      0.86    56171     0.02     0.12  BinData::BasePrimitive#_value
   1.46   209.20      0.84    33181     0.03     0.03  BinData::SanitizedField#name_as_sym
-
+```
 
 スレッドやカーネルなどTCPの部分などで時間がかかっていることがわかる。  
 
